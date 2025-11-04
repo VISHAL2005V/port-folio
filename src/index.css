@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Font */
+@import "@fontsource/poppins/index.css";
+
+/* Global styles */
+@layer base {
+  body {
+    @apply bg-gray-950 text-gray-100 font-poppins;
+    scroll-behavior: smooth;
+  }
+}
