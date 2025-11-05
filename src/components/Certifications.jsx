@@ -22,7 +22,7 @@ export default function Certifications() {
   return (
     <section
       id="certifications"
-      className="relative min-h-screen flex flex-col justify-center py-20 text-gray-100 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center py-16 sm:py-20 text-gray-100 overflow-hidden"
     >
       {/* 🎥 Background Video */}
       <video
@@ -35,35 +35,32 @@ export default function Certifications() {
         <source src="/co.mp4" type="video/mp4" />
       </video>
 
-      {/* 🌌 Dark Gradient Overlay */}
-      <div className="absolute inset-0 "></div>
-
-      {/* ✨ Animated Glow Orbs */}
+      {/* 🌌 Animated Glow Orbs */}
       <motion.div
-        className="absolute w-72 h-72 bg-pink-500/20 rounded-full blur-3xl top-20 left-10"
+        className="absolute w-60 h-60 bg-pink-500/20 rounded-full blur-3xl top-20 left-10"
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
         transition={{ repeat: Infinity, duration: 7 }}
       />
       <motion.div
-        className="absolute w-72 h-72 bg-blue-500/20 rounded-full blur-3xl bottom-10 right-10"
+        className="absolute w-60 h-60 bg-blue-500/20 rounded-full blur-3xl bottom-10 right-10"
         animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.5, 0.2] }}
         transition={{ repeat: Infinity, duration: 8 }}
       />
 
       {/* 🏅 Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         {/* 🔥 Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 text-transparent bg-clip-text"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-12 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 text-transparent bg-clip-text"
         >
           My <span className="text-white">Certifications</span> 🏅
         </motion.h2>
 
         {/* 🧾 Certificates Grid */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-center">
           {certs.map((cert, index) => (
             <motion.div
               key={index}
@@ -74,18 +71,20 @@ export default function Certifications() {
                 scale: 1.05,
                 boxShadow: "0 0 30px rgba(236,72,153,0.5)",
               }}
-              className="relative group p-6 rounded-2xl bg-gray-900/70 border border-gray-800 hover:border-pink-500/40 transition-all text-center backdrop-blur-lg shadow-xl"
+              className="relative group w-72 sm:w-64 p-5 sm:p-6 rounded-2xl bg-gray-900/70 border border-gray-800 hover:border-pink-500/40 transition-all text-center backdrop-blur-lg shadow-xl"
             >
               {/* Neon Border Glow */}
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 blur-md"></div>
 
               {/* Content */}
               <div className="relative z-10">
-                <h3 className="text-xl font-semibold text-pink-400 mb-2">
+                <h3 className="text-lg sm:text-xl font-semibold text-pink-400 mb-2">
                   {cert.title}
                 </h3>
-                <p className="text-gray-300 text-base">{cert.issuer}</p>
-                <span className="text-gray-400 text-sm block mt-2">
+                <p className="text-gray-300 text-sm sm:text-base">
+                  {cert.issuer}
+                </p>
+                <span className="text-gray-400 text-xs sm:text-sm block mt-2">
                   {cert.year}
                 </span>
               </div>
@@ -98,7 +97,7 @@ export default function Certifications() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="text-center text-gray-400 mt-12 text-sm"
+          className="text-center text-gray-400 mt-10 sm:mt-12 text-xs sm:text-sm"
         >
           📜 Continuously learning and upgrading my skills to stay ahead in tech.
         </motion.p>
