@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function SplashScreen({ onFinish }) {
   useEffect(() => {
-    const timer = setTimeout(() => onFinish(), 5000);
+    const timer = setTimeout(() => onFinish(), 7000);
     return () => clearTimeout(timer);
   }, [onFinish]);
 
